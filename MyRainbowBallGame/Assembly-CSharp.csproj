@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\BallWithInput.cs" />
     <Compile Include="Assets\RandomBallLife.cs" />
+    <Compile Include="Assets\MoveCart.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
