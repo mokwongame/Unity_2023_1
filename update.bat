@@ -1,4 +1,4 @@
 chcp 65001
 git add --all
-git commit -m "카트에 움직임과 충돌을 추가"
+git commit -m "무지개 공 낙하 게임의 기본 완성"
 git push -u origin master

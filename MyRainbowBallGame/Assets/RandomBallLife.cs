@@ -7,7 +7,7 @@ public class RandomBallLife : MonoBehaviour
     public float startTime = 1.0f;
     public float makeRate = 2.0f;
     public GameObject ball; // gameObject를 쓰면 안됨
-    Color[] colors = { Color.red, new Color(1.0f, 0.5f, 0.0f), Color.yellow, Color.green, Color.blue, new Color32(75, 0, 130, 255), new Color32(148, 0, 211, 255) }; // Color 배열
+    public static Color[] colors = { Color.red, new Color(1.0f, 0.5f, 0.0f), Color.yellow, Color.green, Color.blue, new Color32(75, 0, 130, 255), new Color32(148, 0, 211, 255) }; // Color 배열; 색깔 배열을 고정시키고(static) 외부에서 접근 허락(public)
     // Start is called before the first frame update
     void Start()
     {
