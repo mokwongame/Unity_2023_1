@@ -5,11 +5,14 @@ using UnityEngine;
 public class MoveCart : MonoBehaviour
 {
     public float speed = 20.0f;
-    public int score = 0;
     int nColor = 0; // 카트 색깔; 색깔 배열은 RandomBallLife.colors에 있음
+    GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
+        // 외부에 있는 오브젝트의 인스턴스 찾기
+        gameManager = FindObjectOfType<GameManager>();
+        // Renderer 찾기
         Renderer rend = gameObject.GetComponent<Renderer>();
         rend.material.color = RandomBallLife.colors[nColor];
     }
@@ -41,9 +44,9 @@ public class MoveCart : MonoBehaviour
             Color ballColor = ballRend.material.color;
             // 공 색깔 == 카트 색깔이면 득점, 아니면 감점
             if (ballColor == RandomBallLife.colors[nColor])
-                score++; // score = score + 1
-            else score--;   // score = score - 1
-            Debug.Log("score = " + score); // 콘솔에서 로그 보기
+                gameManager.incScore(); // score = score + 1
+            else gameManager.decScore();   // score = score - 1
+            Debug.Log("score = " + gameManager.getScore()); // 콘솔에서 로그 보기
             Destroy(collision.gameObject, 0.1f); // 충돌한 ball을 0.1초 후에 파괴
         }
     }

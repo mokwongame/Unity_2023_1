@@ -18,7 +18,7 @@ public class StartGame : MonoBehaviour
 
     }
 
-    void makeNewScene()
+    public void makeNewScene() // public 추가: 외부에서 접근 가능
     {
         SceneManager.LoadScene("RandomBall"); // 씬 이름 추가; RandomBall로 씬이 이동
     }
