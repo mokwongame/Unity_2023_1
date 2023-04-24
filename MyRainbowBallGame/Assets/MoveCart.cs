@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class MoveCart : MonoBehaviour
 {
     public float speed = 20.0f;
+    public AudioSource audioSource;
+    public AudioClip clipSuccess;
+    public AudioClip clipFail;
     int nColor = 0; // 카트 색깔; 색깔 배열은 RandomBallLife.colors에 있음
     GameManager gameManager;
     // Start is called before the first frame update
@@ -49,10 +52,29 @@ public class MoveCart : MonoBehaviour
             Color ballColor = ballRend.material.color;
             // 공 색깔 == 카트 색깔이면 득점, 아니면 감점
             if (ballColor == RandomBallLife.colors[nColor])
+            {
                 gameManager.incScore(); // score = score + 1
-            else gameManager.decScore();   // score = score - 1
+                playCartSuccess();
+            }
+            else
+            {
+                gameManager.decScore();   // score = score - 1
+                playCartFail();
+            }
             Debug.Log("score = " + gameManager.getScore()); // 콘솔에서 로그 보기
             Destroy(collision.gameObject, 0.1f); // 충돌한 ball을 0.1초 후에 파괴
         }
+    }
+
+    void playCartSuccess()
+    {
+        audioSource.volume = 0.9f; // 볼륨 90%; 100% 원하면 1.0f 입력
+        audioSource.PlayOneShot(clipSuccess); // 성공시 효과음
+    }
+
+    void playCartFail()
+    {
+        audioSource.volume = 0.9f;
+        audioSource.PlayOneShot(clipFail); // 실패시 효과음
     }
 }
