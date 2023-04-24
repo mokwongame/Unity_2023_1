@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MoveCart : MonoBehaviour
 {
@@ -28,6 +29,10 @@ public class MoveCart : MonoBehaviour
             nColor = nColor % RandomBallLife.colors.Length; // 7 대신 배열 개수로 나머지 연산
             Renderer rend = gameObject.GetComponent<Renderer>();
             rend.material.color = RandomBallLife.colors[nColor];
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("EndGame");
         }
         // 카트 이동
         float xoff = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime; // 수평 이동

@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RandomBall.unity
     guid: f21b5a6b7fc557543878332bdd5410ac
+  - enabled: 1
+    path: Assets/Scenes/EndGame.unity
+    guid: 880ff92319d956347bd8486a621b794d
   m_configObjects: {}

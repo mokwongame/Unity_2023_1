@@ -58,9 +58,10 @@
   <ItemGroup>
     <Compile Include="Assets\MoveCart.cs" />
     <Compile Include="Assets\BallWithInput.cs" />
+    <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\StartGame.cs" />
     <Compile Include="Assets\RandomBallLife.cs" />
-    <Compile Include="Assets\GameManager.cs" />
+    <Compile Include="Assets\EndGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
