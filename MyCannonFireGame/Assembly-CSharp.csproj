@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\RotBarrel.cs" />
     <Compile Include="Assets\MoveCannon.cs" />
+    <Compile Include="Assets\MakeBall.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
