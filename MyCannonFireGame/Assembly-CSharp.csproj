@@ -59,6 +59,9 @@
     <Compile Include="Assets\RotBarrel.cs" />
     <Compile Include="Assets\MakeBall.cs" />
     <Compile Include="Assets\MoveCannon.cs" />
+    <Compile Include="Assets\BallLife.cs" />
+    <Compile Include="Assets\BulletLife.cs" />
+    <Compile Include="Assets\SmokeLife.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

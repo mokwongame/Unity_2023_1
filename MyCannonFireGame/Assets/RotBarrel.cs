@@ -5,6 +5,7 @@ using UnityEngine;
 public class RotBarrel : MonoBehaviour
 {
     public GameObject bullet;
+    public GameObject smoke;
     public float rotSpeed = 100.0f;
     public float power = 500;
     // Start is called before the first frame update
@@ -29,8 +30,9 @@ public class RotBarrel : MonoBehaviour
     void fireBullet()
     {
         Vector3 position = transform.position + transform.right * 2.0f + transform.up * 0.4f;
-        GameObject newBullet = Instantiate(bullet, position, transform.rotation);
+        GameObject newBullet = Instantiate(bullet, position, transform.rotation); // 器藕 积己
         Rigidbody2D rb = newBullet.GetComponent<Rigidbody2D>();
         rb.AddForce(power * (transform.right * 2.0f + transform.up * 0.4f));
+        Instantiate(smoke, position, transform.rotation); // 楷扁 积己
     }
 }
