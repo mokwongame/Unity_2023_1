@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class RotBarrel : MonoBehaviour
 {
+    public GameObject bullet;
     public float rotSpeed = 100.0f;
+    public float power = 500;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +22,15 @@ public class RotBarrel : MonoBehaviour
         float zang = rotation.z;
         if (zang < 0.0f || zang > 150.0f)
             transform.Rotate(0.0f, 0.0f, -zoff); // 원상 복구
+        if (Input.GetKeyDown(KeyCode.Space))
+            fireBullet();
+    }
+
+    void fireBullet()
+    {
+        Vector3 position = transform.position + transform.right * 2.0f + transform.up * 0.4f;
+        GameObject newBullet = Instantiate(bullet, position, transform.rotation);
+        Rigidbody2D rb = newBullet.GetComponent<Rigidbody2D>();
+        rb.AddForce(power * (transform.right * 2.0f + transform.up * 0.4f));
     }
 }

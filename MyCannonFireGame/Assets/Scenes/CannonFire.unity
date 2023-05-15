@@ -220,7 +220,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e07099697eac3f43a55b91fc6a924a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 4343412136731716951, guid: f1dec66451a93864a8ab50e298740cc7, type: 3}
   rotSpeed: 100
+  power: 300
 --- !u!1 &434772183
 GameObject:
   m_ObjectHideFlags: 0
