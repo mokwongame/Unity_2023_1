@@ -5,9 +5,11 @@ using UnityEngine;
 public class BulletLife : MonoBehaviour
 {
     public GameObject flame;
+    GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         Destroy(gameObject, 10.0f);
     }
 
@@ -24,11 +26,14 @@ public class BulletLife : MonoBehaviour
         else if (collision.gameObject.tag == "Ball") // µæÁ¡
         {
             Destroy(collision.gameObject, 0.1f); // BallÀ» ÆÄ±«
+            gameManager.incScore();
         }
         else if (collision.gameObject.tag == "Floor") // °¨Á¡
         {
+            gameManager.decScore();
         }
         Instantiate(flame, transform.position, transform.rotation);
         Destroy(gameObject, 0.1f); // BulletÀ» ÆÄ±«
+        Debug.Log(gameManager.getScore());
     }
 }
