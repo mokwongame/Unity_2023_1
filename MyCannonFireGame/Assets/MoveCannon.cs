@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class MoveCannon : MonoBehaviour
 {
+    GameManager gameManager;
     public float speed = 10.0f;
     // Start is called before the first frame update
     void Start()
     {
-
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -24,5 +25,14 @@ public class MoveCannon : MonoBehaviour
         position.x = xpos;
         transform.position = position;
         //Debug.Log(xoff);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ball")
+        {
+            gameManager.decScore();
+            Destroy(collision.gameObject, 0.1f);
+        }
     }
 }

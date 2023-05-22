@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RotBarrel : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip clipGunFire;
     public GameObject bullet;
     public GameObject smoke;
     public float rotSpeed = 100.0f;
@@ -34,5 +36,12 @@ public class RotBarrel : MonoBehaviour
         Rigidbody2D rb = newBullet.GetComponent<Rigidbody2D>();
         rb.AddForce(power * (transform.right * 2.0f + transform.up * 0.4f));
         Instantiate(smoke, position, transform.rotation); // 연기 생성
+        playGunFire();
+    }
+
+    void playGunFire()
+    {
+        audioSource.volume = 1.0f;
+        audioSource.PlayOneShot(clipGunFire);
     }
 }

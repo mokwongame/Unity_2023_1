@@ -136,4 +136,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd985d2c2feadaf47983c0c251d0ee6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clipBomb: {fileID: 8300000, guid: 53b855ba337e02d4fa944627b8bad3c5, type: 3}
   flame: {fileID: 1977348371778610673, guid: dabfb5d019493684fb8e7a27dc733194, type: 3}

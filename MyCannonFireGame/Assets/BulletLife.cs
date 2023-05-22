@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletLife : MonoBehaviour
 {
+    public AudioClip clipBomb;
     public GameObject flame;
     GameManager gameManager;
     // Start is called before the first frame update
@@ -33,7 +34,15 @@ public class BulletLife : MonoBehaviour
             gameManager.decScore();
         }
         Instantiate(flame, transform.position, transform.rotation);
+        playBomb();
         Destroy(gameObject, 0.1f); // BulletÀ» ÆÄ±«
         Debug.Log(gameManager.getScore());
+    }
+
+    void playBomb()
+    {
+        AudioSource audioSource = FindObjectOfType<AudioSource>();
+        //audioSource.volume = 1.0f;
+        audioSource.PlayOneShot(clipBomb, 1.0f);
     }
 }
