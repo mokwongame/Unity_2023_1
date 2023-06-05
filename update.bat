@@ -1,4 +1,4 @@
 chcp 65001
 git add --all
-git commit -m "포탄 사격 게임 완성"
+git commit -m "슈퍼 러너 게임 시작"
 git push -u origin master
