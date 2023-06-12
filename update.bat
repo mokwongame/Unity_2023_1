@@ -1,4 +1,4 @@
 chcp 65001
 git add --all
-git commit -m "지면을 난수로 생성"
+git commit -m "슈퍼히어로의 점프 기능 추가"
 git push -u origin master
