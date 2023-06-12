@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -31,5 +32,37 @@ public class PlayerControl : MonoBehaviour
             // มกวม
             rb2.AddForce(new Vector2(0.0f, jumpForce));
         }
+        else if (Input.GetKeyUp(KeyCode.Space) && rb2.velocity.y > 0.0f)
+        {
+            Vector2 vec2 = rb2.velocity;
+            vec2.y *= 0.5f; // vec2.y = vec2.y*0.5f
+            rb2.velocity = vec2;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            ContactPoint2D pt2 = collision.GetContact(0);
+            if (pt2.normal.y > 0.9f)
+            {
+                jumpCount = 0;
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Death")
+        {
+            Invoke("gameOver", 2.0f);
+        }
+    }
+
+    void gameOver()
+    {
+        Debug.Log("Game over");
+        SceneManager.LoadScene("GameOver");
     }
 }
