@@ -57,10 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\MakeGround.cs" />
+    <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\PlayerControl.cs" />
     <Compile Include="Assets\ScrollBack.cs" />
     <Compile Include="Assets\ScrollGround.cs" />
-    <Compile Include="Assets\GameManager.cs" />
+    <Compile Include="Assets\GameOver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
