@@ -8,11 +8,13 @@ public class PlayerControl : MonoBehaviour
     public float speed = 4.0f;
     public float jumpForce = 300.0f;
     Rigidbody2D rb2;
+    GameManager gameManager;
     int jumpCount = 0;
     // Start is called before the first frame update
     void Start()
     {
         rb2 = GetComponent<Rigidbody2D>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -47,6 +49,7 @@ public class PlayerControl : MonoBehaviour
             ContactPoint2D pt2 = collision.GetContact(0);
             if (pt2.normal.y > 0.9f)
             {
+                gameManager.incScore();
                 jumpCount = 0;
             }
         }
